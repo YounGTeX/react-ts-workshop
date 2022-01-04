@@ -16,6 +16,7 @@ const Input = ({ name, givenError, customClass, required, ...rest }: InputProps)
   return (
     <TextField
       className={customClass}
+      helperText={errors[name] && givenError}
       {...register(name, { required: { value: required as boolean, message: givenError as string } })}
       {...rest}
     />
